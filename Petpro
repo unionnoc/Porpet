@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Pet Training Secrets | Fix Bad Behavior in 7 Days!</title>
+    <meta name="description" content="Veterinary-approved dog & cat training guide. Stop barking, biting, scratching NOW! Instant download.">
+    <!-- ANIMAL-STYLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fredoka+One&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6B6B;  /* Vibrant red for urgency */
+            --secondary: #4ECDC4;  /* Calming teal for trust */
+            --accent: #FFD166;  /* Gold for highlights */
+            --dark: #292F36;  /* Professional dark text */
+            --light: #F7FFF7;  /* Soft background */
+            --font-pet: 'Chewy', cursive;  /* Fun animal font */
+            --font-heading: 'Fredoka One', cursive;  /* Bold titles */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+            cursor: pointer;
+        }
+        
+        /* HEADER - Animated Pet Logo */
+        header {
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+        
+        .logo {
+            font-family: var(--font-pet);
+            font-size: 2.2rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-family: var(--font-heading);
+            transition: all 0.3s;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* HERO - Animated Floating Pets */
+        .hero {
+            height: 90vh;
+            min-height: 800px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-pet);
+            font-size: 4rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+            animation: fadeInLeft 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInLeft 1.2s ease;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            font-family: var(--font-heading);
+            transition: all 0.3s;
+            box-shadow: 0 10px 25px rgba(255,107,107,0.4);
+            animation: pulse 2s infinite;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(255,107,107,0.6);
+        }
+        
+        .floating-pets {
+            position: absolute;
+            right: 10%;
+            bottom: 10%;
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 15px 10px rgba(0,0,0,0.3));
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        /* PRODUCT DETAILS - Animated Tabs */
+        .product-details {
+            padding: 100px 10%;
+            background: white;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-family: var(--font-pet);
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 5px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 10%;
+            border-radius: 5px;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .tab-button {
+            padding: 15px 30px;
+            background: rgba(74, 205, 196, 0.1);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .tab-button.active {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .tab-content h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+        
+        .tab-content ul {
+            list-style-type: none;
+        }
+        
+        .tab-content ul li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 35px;
+            font-size: 1.1rem;
+        }
+        
+        .tab-content ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+        }
+        
+        /* TESTIMONIALS - Animated Cards */
+        .testimonials {
+            padding: 100px 10%;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+            text-align: center;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-family: Georgia, serif;
+            font-size: 6rem;
+            color: rgba(78, 205, 196, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+        
+        .rating {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid var(--accent);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* GUARANTEE SECTION - Animated Badge */
+        .guarantee {
+            padding: 80px 10%;
+            text-align: center;
+            background: var(--secondary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .guarantee::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: url('https://cdn-icons-png.flaticon.com/512/616/616408.png') no-repeat;
+            background-size: contain;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .guarantee-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px 40px;
+            border-radius: 50px;
+            margin: 30px 0;
+            backdrop-filter: blur(5px);
+            border: 2px dashed white;
+            animation: pulse 2s infinite;
+        }
+        
+        .guarantee-badge i {
+            font-size: 2.5rem;
+            margin-right: 15px;
+        }
+        
+        /* PRICING - Animated Hover */
+        .pricing {
+            padding: 100px 10%;
+            background: white;
+            text-align: center;
+        }
+        
+        .price {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: var(--primary);
+            margin: 30px 0;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+        
+        /* FOOTER - Animated Social Icons */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 10% 40px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-pet);
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+        
+        .footer-logo span {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px) rotate(10deg);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .floating-pets {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .hero {
+                text-align: center;
+                padding: 0 5%;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .price {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER WITH ANIMATED LOGO -->
+    <header id="header">
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616430.png" alt="Paw Icon">
+            Pet<span>Whisperer</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="techpk">The Guide</a></li>
+                <li><a href="techpk">Results</a></li>
+                <li><a href="techpk">Stories</a></li>
+                <li><a href="techpk">Guarantee</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION WITH FLOATING PET -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Stop Bad Pet Behavior <span style="color: var(--accent);">FAST!</span></h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Veterinary-approved training techniques that transform disobedient pets in <strong>just 7 days</strong> - no yelling or punishment needed!</p>
+            <a href="techpk" class="cta-button animate__animated animate__pulse animate__infinite">
+                <i class="fas fa-paw" style="margin-right: 10px;"></i> Get Instant Access
+            </a>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616430.png" alt="Happy Dog" class="floating-pets" width="350">
+    </section>
+
+    <!-- PRODUCT DETAILS WITH TABS -->
+    <section class="product-details" id="product">
+        <h2 class="section-title">What's Inside?</h2>
+        <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px;">This <strong>comprehensive guide</strong> contains everything you need to transform your pet's behavior quickly and humanely.</p>
+        
+        <div class="tabs">
+            <div class="tab-button active" data-tab="tab1">For Dogs</div>
+            <div class="tab-button" data-tab="tab2">For Cats</div>
+            <div class="tab-button" data-tab="tab3">Bonus Materials</div>
+        </div>
+        
+        <div class="tab-content active" id="tab1">
+            <h3>Dog Training Secrets Include:</h3>
+            <ul>
+                <li><strong>Barking Control:</strong> Stop excessive barking in 3 days or less</li>
+                <li><strong>Leash Pulling:</strong> Teach perfect loose-leash walking</li>
+                <li><strong>Jumping Fix:</strong> Prevent jumping on guests permanently</li>
+                <li><strong>Aggression Solutions:</strong> Calm reactive dogs safely</li>
+                <li><strong>Potty Training:</strong> Housebreak any dog quickly</li>
+                <li><strong>Command Mastery:</strong> Get instant response to 15+ commands</li>
+            </ul>
+        </div>
+        
+        <div class="tab-content" id="tab2">
+            <h3>Cat Behavior Solutions Include:</h3>
+            <ul>
+                <li><strong>Scratching Fix:</strong> Save your furniture in 7 days</li>
+                <li><strong>Litter Box Training:</strong> Solve bathroom issues permanently</li>
+                <li><strong>Nighttime Peace:</strong> Stop 4am wake-up calls</li>
+                <li><strong>Aggression Control:</strong> Calm aggressive cats</li>
+                <li><strong>Introducing Pets:</strong> Make multi-cat homes harmonious</li>
+                <li><strong>Play Techniques:</strong> Prevent destructive behavior</li>
+            </ul>
+        </div>
+        
+        <div class="tab-content" id="tab3">
+            <h3>Exclusive Bonuses:</h3>
+            <ul>
+                <li><strong>Training Videos:</strong> Step-by-step visual guides</li>
+                <li><strong>Printable Cheat Sheets:</strong> Quick-reference commands</li>
+                <li><strong>Progress Trackers:</strong> Monitor your pet's improvement</li>
+                <li><strong>Private Community:</strong> Get expert Q&A support</li>
+                <li><strong>Emergency Protocols:</strong> Handle crises safely</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">Success Stories</h2>
+        <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px;">Over <strong>12,500 pets transformed</strong> using these methods!</p>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial-card animate__animated animate__fadeInUp">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-content">"My rescue dog went from uncontrollable to perfectly behaved in 2 weeks! The barking and chewing stopped almost immediately."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="author-avatar">
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>Dog Owner, 3 years</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card animate__animated animate__fadeInUp animate__delay-1s">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-content">"After 5 failed trainers, THIS finally worked! My aggressive German Shepherd now listens perfectly."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mark T." class="author-avatar">
+                    <div class="author-info">
+                        <h4>Mark Thompson</h4>
+                        <p>Dog Owner, 5 years</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card animate__animated animate__fadeInUp animate__delay-2s">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-content">"My furniture is saved! The cat scratching solutions worked immediately. Worth every penny!"</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Lisa M." class="author-avatar">
+                    <div class="author-info">
+                        <h4>Lisa Martinez</h4>
+                        <p>Cat Owner, 2 years</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUARANTEE SECTION -->
+    <section class="guarantee" id="guarantee">
+        <h2 class="section-title">Risk-Free Investment</h2>
+        <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 20px;">We stand behind our methods with the strongest guarantee in the industry</p>
+        
+        <div class="guarantee-badge">
+            <i class="fas fa-shield-alt"></i>
+            <div>
+                <h3 style="font-size: 1.5rem;">60-Day Money Back Guarantee</h3>
+                <p>If you don't see dramatic improvements, we'll refund every penny!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">Get Started Today</h2>
+        <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 30px;">Instant digital access - start training in minutes!</p>
+        
+        <div class="price">
+            <span class="original-price">$49.99</span>
+            <span style="color: var(--accent);">$13.46</span>
+        </div>
+        
+        <a href="digistore" class="cta-button" style="font-size: 1.3rem; padding: 20px 50px;">
+            <i class="fas fa-download" style="margin-right: 10px;"></i> Download Now
+        </a>
+        
+        <p style="margin-top: 20px; font-size: 1rem; color: #666;">One-time payment • Instant access • 60-Day Guarantee</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">Pet<span>Whisperer</span></div>
+        <p style="max-width: 500px; margin: 0 auto 30px;">Professional pet training solutions developed by certified animal behaviorists</p>
+        
+        <div class="social-links">
+            <a href="techpk"><i class="fab fa-facebook-f"></i></a>
+            <a href="techpk"><i class="fab fa-instagram"></i></a>
+            <a href="techpk"><i class="fab fa-youtube"></i></a>
+            <a href="techpk"><i class="fab fa-tiktok"></i></a>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2024 PetWhisperer Training | <a href="#" style="color: #aaa;">Privacy Policy</a> | <a href="#" style="color: #aaa;">Terms</a>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // Track if redirect has happened
+        let hasRedirected = false;
+        
+        // First click handler
+        document.body.addEventListener('click', function firstClickHandler(e) {
+            if (!hasRedirected) {
+                // Open techpk in new tab
+                window.open('techpk', '_blank');
+                hasRedirected = true;
+                
+                // Remove this listener after first click
+                document.body.removeEventListener('click', firstClickHandler);
+                
+                // Prevent default action only on first click
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+        }, true); // Use capture phase to catch all clicks
+
+        // Your existing JavaScript
+        $(document).ready(function(){
+            // TAB SYSTEM
+            $('.tab-button').click(function(){
+                $('.tab-button').removeClass('active');
+                $(this).addClass('active');
+                
+                $('.tab-content').removeClass('active');
+                $('#' + $(this).data('tab')).addClass('active');
+            });
+            
+            // HEADER SCROLL EFFECT
+            $(window).scroll(function(){
+                if ($(this).scrollTop() > 100) {
+                    $('#header').css({
+                        'background': 'rgba(41, 47, 54, 0.97)',
+                        'padding': '10px 5%'
+                    });
+                    $('nav ul li a').css('color', 'white');
+                    $('.logo').css('color', 'white');
+                } else {
+                    $('#header').css({
+                        'background': 'rgba(255, 255, 255, 0.97)',
+                        'padding': '15px 5%'
+                    });
+                    $('nav ul li a').css('color', 'var(--dark)');
+                    $('.logo').css('color', 'var(--primary)');
+                }
+            });
+            
+            // SMOOTH SCROLLING
+            $('a[href*="#"]').on('click', function(e) {
+                if (hasRedirected) { // Only work after redirect
+                    e.preventDefault();
+                    var target = $(this.hash);
+                    if (target.length) {
+                        $('html, body').animate(
+                            {
+                                scrollTop: target.offset().top - 80,
+                            },
+                            600,
+                            'easeInOutExpo'
+                        );
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
